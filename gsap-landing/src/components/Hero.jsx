@@ -5,6 +5,7 @@ import {SplitText} from "gsap/all";
 
 const Hero = () => {
     useGSAP(() => {
+
         const heroSplit = new SplitText('.title', {type: 'chars , words'});
 
         const paragraphSplit = new SplitText('.subtitle', {type: 'lines'});
@@ -12,13 +13,16 @@ const Hero = () => {
 
         heroSplit.chars.forEach((char) => char.classList.add('text-gradient'))
 
+
+
         gsap.from(
             heroSplit.chars,
             {
                 yPercent: 100,
                 duration: 1.8,
                 ease: "expo.out",
-                stagger: 0.06
+                stagger: 0.06,
+
             }
         )
 
@@ -44,6 +48,16 @@ const Hero = () => {
             }
         ).to(".right-leaf", {y: 200,}, 0)
             .to('.left-leaf', {y: -200,}, 0)
+
+
+
+        gsap.fromTo('.left-leaf'
+            , {x:'-25%'},
+            {x:0, ease:'power1.inOut.out', delay:1})
+        gsap.fromTo('.right-leaf'
+            , {x:'25%'},
+            {x:0, ease:'power1.inOut.out', delay:1})
+
     }, [])
     return (<>
         <section id="hero" className="">
