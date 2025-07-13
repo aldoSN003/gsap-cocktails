@@ -46,7 +46,7 @@ const Hero = () => {
             .to('.left-leaf', {y: -200,}, 0)
     }, [])
     return (<>
-        <section id="hero" className="noisy">
+        <section id="hero" className="">
             <h1 className="title">MOJITO</h1>
 
             <img

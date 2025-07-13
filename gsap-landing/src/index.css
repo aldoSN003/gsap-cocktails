@@ -10,6 +10,8 @@
 @theme {
     --color-yellow: #e7d393;
     --color-white-100: #efefef;
+    --color-black-olive : #2e382e;
+    --color-robin-egg-blue: #50c9ce;
     --font-sans: "Mona Sans", sans-serif;
     --font-modern-negra: "Modern Negra", sans-serif;
     --font-serif: "DM Serif Text", serif;
@@ -18,7 +20,8 @@
 html,
 body {
     width: 100%;
-    background-color: black;
+    background-color: var(--color-black-olive);
+
     color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -76,7 +79,7 @@ body {
         }
 
         a {
-            @apply cursor-pointer text-nowrap md:text-base text-sm;
+            @apply  cursor-pointer text-nowrap md:text-base text-sm;
         }
 
         ul {
@@ -110,7 +113,7 @@ body {
                 @apply flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto;
 
                 p:nth-of-type(2) {
-                    @apply font-modern-negra text-6xl text-yellow max-w-xl;
+                    @apply font-modern-negra text-6xl text-[var(--color-robin-egg-blue)] max-w-xl;
                 }
 
                 p:last-of-type {
@@ -323,7 +326,7 @@ body {
             .info {
                 @apply space-y-4 lg:translate-y-20;
 
-                #title {
+                    #title {
                     @apply font-modern-negra md:text-6xl text-3xl text-yellow max-w-40;
                 }
             }

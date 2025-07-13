@@ -34,12 +34,12 @@ const Navbar = () => {
     return (<nav>
         <div>
             <a href="#home" className="flex items-center gap-2">
-                <img src="/images/logo.png" alt="logo"/>
-                <p>Velvelt Pour</p>
+                <img src="/images/palm-tree.svg" alt="logo" className="w-8"/>
+                <p>Coco Lounge</p>
             </a>
             <ul>
-                {navLinks.map((link) => (<li key={link.id}>
-                    <a href={`#${link.id}`}>{link.title}</a>
+                {navLinks.map((link) => (<li key={link.id} className="text-[var(--color-robin-egg-blue)]">
+                    <a href={`#${link.id}`}>{link.title} </a>
                 </li>))}
             </ul>
         </div>
