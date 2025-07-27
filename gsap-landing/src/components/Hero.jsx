@@ -1,13 +1,13 @@
-import { useGSAP } from "@gsap/react";
+import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
+import {SplitText} from "gsap/all";
+import {useRef} from "react";
+import {useMediaQuery} from "react-responsive";
 
 const Hero = () => {
     const videoRef = useRef();
 
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    const isMobile = useMediaQuery({maxWidth: 767});
 
     useGSAP(() => {
         const heroSplit = new SplitText(".title", {
@@ -46,15 +46,15 @@ const Hero = () => {
                     scrub: true,
                 },
             })
-            .to(".right-leaf", { y: 200 }, 0)
-            .to(".left-leaf", { y: -200 }, 0)
-            .to(".arrow", { y: 100 }, 0);
+            .to(".right-leaf", {y: 200}, 0)
+            .to(".left-leaf", {y: -200}, 0)
+            .to(".arrow", {y: 100}, 0);
         gsap.fromTo('.left-leaf'
-            , {x:'-25%'},
-            {x:0, ease:'power1.inOut.out', delay:1})
+            , {x: '-25%'},
+            {x: 0, ease: 'power1.inOut.out', delay: 1})
         gsap.fromTo('.right-leaf'
-            , {x:'25%'},
-            {x:0, ease:'power1.inOut.out', delay:1})
+            , {x: '25%'},
+            {x: 0, ease: 'power1.inOut.out', delay: 1})
         const startValue = isMobile ? "top 50%" : "center 60%";
         const endValue = isMobile ? "120% top" : "bottom top";
 
@@ -95,19 +95,15 @@ const Hero = () => {
                     {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
 
                     <div className="content">
-                        <div className="space-y-5 hidden md:block">
-                            <p>Cool. Crisp. Classic.</p>
+                        <div className="space-y-5 hidden md:block"><p>Cool. Crisp. Classic.</p>
                             <p className="subtitle">
-                                Sip the Spirit <br /> of Summer
-                            </p>
+                                Sip the Spirit <br/> of Summer</p>
                         </div>
-
-                        <div className="view-cocktails">
-                            <p className="subtitle">
-                                Every cocktail on our menu is a blend of premium ingredients,
-                                creative flair, and timeless recipes — designed to delight your
-                                senses.
-                            </p>
+                        <div className="view-cocktails"><p className="subtitle">
+                            Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless
+                            recipes — designed to delight your
+                            senses.
+                        </p>
                             <a href="#cocktails">View cocktails</a>
                         </div>
                     </div>
