@@ -55,24 +55,12 @@ const Hero = () => {
         gsap.fromTo('.right-leaf'
             , {x: '25%'},
             {x: 0, ease: 'power1.inOut.out', delay: 1})
-        const startValue = isMobile ? "top 50%" : "center 60%";
-        const endValue = isMobile ? "120% top" : "bottom top";
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "video",
-                start: startValue,
-                end: endValue,
-                scrub: true,
-                pin: true,
-            },
-        });
-
+        // Simple from animation for video and auto-play
         videoRef.current.onloadedmetadata = () => {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration,
-            });
+            videoRef.current.playbackRate = 2;
+            videoRef.current.play();
         };
+
     }, []);
 
     return (
